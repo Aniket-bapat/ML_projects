@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 movies_path = os.path.join(
