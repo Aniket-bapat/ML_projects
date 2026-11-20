@@ -1,9 +1,21 @@
 import streamlit as st
 import pickle
 
-movies_df = pickle.load(open('movies.pkl','rb'))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+movies_path = os.path.join(
+    BASE_DIR,
+    '..',
+    'movies.pkl'
+)
+
+similarity_path = os.path.join(
+    BASE_DIR,
+    '..',
+    'similarity.pkl'
+)
+movies_df = pickle.load(open(movies_path,'rb'))
 movies = movies_df['title'].values
-similarity = pickle.load(open('similarity.pkl','rb'))
+similarity = pickle.load(open(similarity_path,'rb'))
 print(type(movies_df))
 
 def recommend(movie):
